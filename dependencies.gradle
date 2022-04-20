@@ -1,0 +1,110 @@
+/**
+ * This file defines all project dependencies
+ */
+
+def libraryVersions = [
+
+        androidGradlePlugin        : '7.0.4',
+        kotlinGradlePlugin         : '1.5.0',
+        coreKtx                    : '1.5.0-rc02',
+
+        lifecycle                  : '2.3.1',
+        material                   : '1.3.0',
+        constraintLayout           : '2.0.0',
+        recyclerView               : '1.1.0',
+        cardView                   : '1.0.0',
+        legacySupport              : '1.0.0',
+        materialDialogs            : '3.3.0',
+        viewBindingPropertyDelegate: '1.4.6',
+
+        ktxActivity                : '1.2.3',
+        ktxFragment                : '1.3.3',
+        navigation                 : '2.3.5',
+        dagger                     : '2.35.1',
+        glide                      : '4.12.0',
+
+        retrofit                   : '2.9.0',
+        okHttp                     : '4.9.0',
+        gson                       : '2.8.6',
+
+        coroutines                 : '1.5.0',
+        securityCrypto             : '1.1.0-alpha03',
+        leakCanary                 : '2.7',
+
+        firebase                   : '4.3.10',
+        firebasePlatform           : '29.3.1',
+]
+
+ext {
+
+    /**
+     * Common dependencies for all project
+     */
+
+    globalDependencies = [
+
+            layerApp                : project(":app"),
+            layerData               : project(":data"),
+            layerDomain             : project(":domain"),
+
+            androidGradlePlugin     : "com.android.tools.build:gradle:${libraryVersions.androidGradlePlugin}",
+            kotlinGradlePlugin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:${libraryVersions.kotlinGradlePlugin}",
+            navigationSafeArgsPlugin: "androidx.navigation:navigation-safe-args-gradle-plugin:${libraryVersions.navigation}",
+            coreKtx                 : "androidx.core:core-ktx:${libraryVersions.coreKtx}",
+
+            dagger                  : "com.google.dagger:dagger:${libraryVersions.dagger}",
+            daggerCompiler          : "com.google.dagger:dagger-compiler:${libraryVersions.dagger}",
+
+            firebase                   : "com.google.gms:google-services:${libraryVersions.firebase}"
+    ]
+
+    /**
+     * Dependencies for app module
+     */
+
+    appDependencies = [
+
+            constraintLayout           : "androidx.constraintlayout:constraintlayout:${libraryVersions.constraintLayout}",
+            lifecycleViewmodelKtx      : "androidx.lifecycle:lifecycle-viewmodel-ktx:${libraryVersions.lifecycle}",
+            lifecycleLivedataKtx       : "androidx.lifecycle:lifecycle-livedata-ktx:${libraryVersions.lifecycle}",
+            lifecycleJava8             : "androidx.lifecycle:lifecycle-common-java8:${libraryVersions.lifecycle}",
+            legacySupportV4            : "androidx.legacy:legacy-support-v4:${libraryVersions.legacySupport}",
+            cardView                   : "androidx.cardview:cardview:${libraryVersions.cardView}",
+            navigationFragmentKtx      : "androidx.navigation:navigation-fragment-ktx:${libraryVersions.navigation}",
+            navigationUiKtx            : "androidx.navigation:navigation-ui-ktx:${libraryVersions.navigation}",
+            activityKtx                : "androidx.activity:activity-ktx:${libraryVersions.ktxActivity}",
+            fragmentKtx                : "androidx.fragment:fragment-ktx:${libraryVersions.ktxFragment}",
+            material                   : "com.google.android.material:material:${libraryVersions.material}",
+
+            glide                      : "com.github.bumptech.glide:glide:${libraryVersions.glide}",
+            viewBindingPropertyDelegate: "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${libraryVersions.viewBindingPropertyDelegate}",
+
+            firebasePlatform           : "com.google.firebase:firebase-bom:${libraryVersions.firebasePlatform}",
+            firebaseAnalytics          : "com.google.firebase:firebase-analytics-ktx"
+    ]
+
+    /**
+     * Dependencies for data module
+     */
+
+    dataDependencies = [
+
+            gson                    : "com.google.code.gson:gson:${libraryVersions.gson}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${libraryVersions.retrofit}",
+            retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:${libraryVersions.retrofit}",
+            okHttp                  : "com.squareup.okhttp3:okhttp:${libraryVersions.okHttp}",
+            okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${libraryVersions.okHttp}",
+
+            securityCrypto          : "androidx.security:security-crypto:${libraryVersions.securityCrypto}"
+    ]
+
+    /**
+     * Dependencies for domain module
+     */
+
+    domainDependencies = [
+
+            coroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${libraryVersions.coroutines}",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${libraryVersions.coroutines}",
+    ]
+}

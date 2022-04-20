@@ -1,0 +1,70 @@
+/**
+ * This file defines configuration for all project
+ */
+
+ext {
+
+    /**
+     * Common configuration for all project
+     */
+
+    def keysProperties = new Properties()
+    keysProperties.load(new FileInputStream(rootProject.file("keys.properties")))
+
+    globalConfig = [
+            compileSdkVersion: 30,
+            minSdkVersion    : 24,
+            targetSdkVersion : 30,
+            buildToolsVersion: "29.0.3"
+    ]
+
+    /**
+     * Configuration for app module
+     */
+
+    def appVersionMajor = 1
+    def appVersionMinor = 0
+    def appVersionPatch = 0
+
+    appConfig = [
+
+            applicationId: 'com.baseproject',
+
+            versionCode  : generateVersionCode(appVersionMajor, appVersionMinor, appVersionPatch),
+            versionName  : generateVersionName(appVersionMajor, appVersionMinor, appVersionPatch),
+
+            keyAlias     : keysProperties['keyAlias'],
+            keyPassword  : keysProperties['keyPassword'],
+            storeFile    : file(keysProperties['storeFile']),
+            storePassword: keysProperties['storePassword']
+    ]
+
+    /**
+     * Configuration for data module
+     */
+
+    dataConfig = [
+            devUrl : "http://development.com",
+            prodUrl: "http://production.com"
+    ]
+
+    /**
+     * Configuration for domain module
+     */
+
+    domainConfig = [
+
+    ]
+}
+
+/**
+ * Versions calculations
+ */
+
+static Integer generateVersionCode(versionMajor, versionMinor, versionPatch) {
+    return versionMajor * 1000 + versionMinor * 100 + versionPatch
+}
+
+static String generateVersionName(versionMajor, versionMinor, versionPatch) {
+    return "${versionMajor}.${versionMinor}.${versionPatch}"
+}

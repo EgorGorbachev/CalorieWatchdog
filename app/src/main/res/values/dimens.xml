@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Loading Fragment -->
+    <dimen name="loading_title_margin_top">20dp</dimen>
+    <dimen name="loading_title_size">32sp</dimen>
+</resources>

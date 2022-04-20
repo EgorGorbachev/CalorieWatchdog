@@ -1,0 +1,5 @@
+<resources>
+    <!-- Common strings -->
+    <string name="app_name">Calorie Watchdog</string>
+    <string name="tap_to_exit">Press Back again to exit.</string>
+</resources>

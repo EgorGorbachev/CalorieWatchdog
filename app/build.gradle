@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'com.google.gms.google-services'
+
+android {
+
+    flavorDimensions "mode"
+    compileSdkVersion globalConfig.compileSdkVersion
+    buildToolsVersion globalConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId appConfig.applicationId
+        minSdkVersion globalConfig.minSdkVersion
+        targetSdkVersion globalConfig.targetSdkVersion
+        versionCode appConfig.versionCode
+        versionName appConfig.versionName
+    }
+
+    signingConfigs {
+        release {
+            keyAlias appConfig.keyAlias
+            keyPassword appConfig.keyPassword
+            storeFile appConfig.storeFile
+            storePassword appConfig.storePassword
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            applicationIdSuffix ".debug"
+        }
+    }
+
+    productFlavors {
+        production {}
+        development {
+            resConfigs "en", "xxhdpi"
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    // Data layer
+    implementation globalDependencies.layerData
+
+    // Common
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.lifecycleViewmodelKtx
+    implementation appDependencies.lifecycleLivedataKtx
+    implementation appDependencies.lifecycleJava8
+    implementation appDependencies.legacySupportV4
+    implementation appDependencies.cardView
+    implementation appDependencies.navigationFragmentKtx
+    implementation appDependencies.navigationUiKtx
+    implementation appDependencies.activityKtx
+    implementation appDependencies.fragmentKtx
+    implementation appDependencies.glide
+
+    // Material design system
+    implementation appDependencies.material
+
+    // View Binding property buster
+    implementation appDependencies.viewBindingPropertyDelegate
+
+    // DI
+    kapt globalDependencies.daggerCompiler
+
+    //Firebase
+    implementation platform(appDependencies.firebasePlatform)
+    implementation appDependencies.firebaseAnalytics
+}
+
+android.applicationVariants.all { variant ->
+    variant.resValue "string", "app_version", "${appConfig.versionName} (${appConfig.build})"
+    variant.outputs.all { outputFileName = "${variant.name}-v${variant.versionCode}.apk" }
+}

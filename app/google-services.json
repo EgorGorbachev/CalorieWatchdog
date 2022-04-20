@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1078230363165",
+    "project_id": "caloriewatchdog",
+    "storage_bucket": "caloriewatchdog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078230363165:android:afecaadfcc10f1d15b6af4",
+        "android_client_info": {
+          "package_name": "com.example.caloriewatchdog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078230363165-ibkelqma4jmmgbmsje1pnghmnv39o87u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.caloriewatchdog",
+            "certificate_hash": "15ff5a665406f3fac6003fef3b13b7eca88b3974"
+          }
+        },
+        {
+          "client_id": "1078230363165-rmm0qd4k9o1i024hr439cm4h466veh2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCeIrMECsIoYnuXhmwi2H7TTDUN3hUKC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078230363165-rmm0qd4k9o1i024hr439cm4h466veh2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
