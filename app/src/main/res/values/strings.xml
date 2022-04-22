@@ -2,4 +2,28 @@
     <!-- Common strings -->
     <string name="app_name">Calorie Watchdog</string>
     <string name="tap_to_exit">Press Back again to exit.</string>
+    <string name="to_forgot_password_btn">Forgot password?</string>
+    <string name="check_box">Remember me</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sing_in">Sing In</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="submit">Submit</string>
+    <string name="okay">Okay</string>
+    <string name="invalid_email">The email address you entered is incorrect!</string>
+    <string name="bad">bad</string>
+
+    <!-- Sing In Fragment -->
+    <string name="sing_in_to_sing_up_text">Don`t have an account?</string>
+
+    <!-- Sing Up Fragment -->
+    <string name="sing_up_confirm_password_input">Confirm password</string>
+    <string name="sing_up_to_sing_in_text">Already have an account?</string>
+    <string name="password_length_message">The password is too short!</string>
+    <string name="passwords_do_not_match_message">The passwords don`t match !</string>
+
+    <!-- Forgot Password Fragment -->
+    <string name="forgot_password_message">* enter your email address we`ll send you an email to reset your password.</string>
+    <string name="forgot_password_email_input_hint">Email</string>
+
 </resources>

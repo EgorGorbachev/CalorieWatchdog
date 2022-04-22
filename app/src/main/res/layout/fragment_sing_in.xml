@@ -1,8 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.sing_in.SingInFragment">
+    tools:context=".ui.sing_in.SingInFragment"
+    android:background="@color/green"
+    tools:ignore="All">
+
+    <ImageView
+        android:id="@+id/singInLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sing_in_logo_margin_top"
+        android:src="@drawable/ic_loading_logo_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/singInTitle"
+        style="@style/log_reg_screens_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singInLogo" />
+
+    <EditText
+        android:id="@+id/singInEmailInput"
+        style="@style/reg_auth_screen_text_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sing_in_email_input_margin_top"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singInTitle" />
+
+    <EditText
+        android:id="@+id/singInPasswordInput"
+        style="@style/reg_auth_screen_text_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singInEmailInput" />
+
+    <TextView
+        android:id="@+id/singInForgotPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/to_forgot_password_btn_margin_top"
+        android:layout_marginEnd="@dimen/to_forgot_password_btn_margin_end"
+        android:fontFamily="@font/hind_siliguri_bold"
+        android:text="@string/to_forgot_password_btn"
+        android:textColor="@color/white"
+        android:textSize="@dimen/to_forgot_password_btn_text_size"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singInPasswordInput" />
+
+    <Button
+        android:id="@+id/singInMainButton"
+        style="@style/reg_auth_main_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sing_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singInForgotPasswordButton" />
+
+    <CheckBox
+        android:id="@+id/singInCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check_box"
+        android:buttonTint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singInMainButton" />
+
+    <LinearLayout
+        android:id="@+id/SingInToSingUpTextContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/singInCheckBox">
+
+        <TextView
+            android:id="@+id/singInToSingUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/hind_siliguri_regular"
+            android:text="@string/sing_in_to_sing_up_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sing_in_to_sing_up_text_size" />
+
+        <TextView
+            android:id="@+id/singInToSingUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sing_in_to_sing_up_button"
+            android:fontFamily="@font/hind_siliguri_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/sing_up"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sing_in_to_register_button_size" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,8 @@
 
 package com.example.caloriewatchdog.common.base
 
+import android.app.Activity
+import androidx.activity.addCallback
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
@@ -48,5 +50,11 @@ abstract class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId) {
     /* Other */
     private fun hideKeyboard() {
         view?.let { activity?.hideKeyboard(it) }
+    }
+
+    fun backPressedCloseApp(activity: Activity) {
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            activity.finish()
+        }
     }
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="green">#598234</color>
-    <color name="green_light">#AEBD38</color>
-    <color name="gray">#505160</color>
-    <color name="gray_light">#68829E</color>
+    <color name="green">#4c934c</color>
+    <color name="green_light">#53a548</color>
+    <color name="green_dark">#19381f</color>
+    <color name="yellow">#eee82c</color>
+    <color name="green_yellow">#91cb3e</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
